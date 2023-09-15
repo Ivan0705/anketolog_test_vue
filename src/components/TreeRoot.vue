@@ -3,12 +3,12 @@
         <div class="tree-root_block block" :style="{'margin-left':`${depth*40}px`}">
             <div class="block_name" v-if="!isEdit">
                 <div class="block_title">
-                    <img class="block_img" v-bind:src="require(`@/images_file-types/${node.type}`)" alt="node.name">
+                    <img class="block_img" v-bind:src="require(`@/images_file-types/${node.type}`)" :alt="node.name">
                     {{node.name }}
                 </div>
                 <div class="block_group-btns btn">
                     <div class="btn_edit" @click="edit">
-                        <img src="../images_actons/edit.png" alt="remove">
+                        <img src="../images_actons/edit.png" alt="edit">
                     </div>
                     <div class="btn_remove" @click="remove(node.id)">
                         <img src="../images_actons/remove.png" alt="remove">
