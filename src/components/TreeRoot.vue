@@ -3,8 +3,8 @@
         <div class="tree-root_block block" :style="{'margin-left':`${depth*40}px`}">
             <div class="block_name" v-if="!isEdit">
                 <div class="block_title">
-                    <img class="block_img" v-bind:src="require(`@/images_file-types/${node.type}`)" alt="node.name">{{
-                    node.name }}
+                    <img class="block_img" v-bind:src="require(`@/images_file-types/${node.type}`)" alt="node.name">
+                    {{node.name }}
                 </div>
                 <div class="block_group-btns btn">
                     <div class="btn_edit" @click="edit">
@@ -22,7 +22,7 @@
                 <button class="edit_btn" @click="save">Save</button>
             </div>
             <TreeRoot v-for="item in node.children" :node="item" @remove="remove" :key="item.id"
-                      :depth="depth+1"/>
+                      :depth="depth + 1"/>
         </div>
     </div>
 </template>
@@ -78,7 +78,6 @@
     }
 
     .block_img {
-        border-radius: 5px;
         width: 35px;
         height: 35px;
     }
@@ -86,7 +85,6 @@
     .block_name {
         display: flex;
         justify-content: space-between;
-
     }
 
     .block_group-btns {
